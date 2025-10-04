@@ -89,8 +89,8 @@ int main(int argc, char **argv)
             now_ms += delays.at(duration_intr);
 
             // execute IRET
-            // execution += std::to_string(now_ms) + ", " + std::to_string(EXEC_IRET) + ", IRET\n";
-            // now_ms += EXEC_IRET;
+            execution += std::to_string(now_ms) + ", " + std::to_string(EXEC_IRET) + ", executing IRET\n";
+            now_ms += EXEC_IRET;
         }
         else if (activity == "END_IO")
         {
@@ -130,12 +130,12 @@ int main(int argc, char **argv)
             now_ms += EXEC_ISR;
 
             // 2. check device status
-            execution += std::to_string(now_ms) + ", " + std::to_string(delays.at(duration_intr)) + ", check for errors\n";
+            execution += std::to_string(now_ms) + ", " + std::to_string(delays.at(duration_intr)) + ", check device status\n";
             now_ms += delays.at(duration_intr);
 
             // execute IRET
-            // execution += std::to_string(now_ms) + ", " + std::to_string(EXEC_IRET) + ", IRET\n";
-            // now_ms += EXEC_IRET;
+            execution += std::to_string(now_ms) + ", " + std::to_string(EXEC_IRET) + ", executing IRET\n";
+            now_ms += EXEC_IRET;
         }
         /************************************************************************/
     }
